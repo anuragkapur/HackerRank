@@ -1,1 +1,1 @@
-Code from various challenges hosted on [https://www.hackerrank.com](https://www.hackerrank.com)
+Solutions to various challenges hosted on [https://www.hackerrank.com](https://www.hackerrank.com)
