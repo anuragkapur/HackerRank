@@ -1,0 +1,29 @@
+1. Lets start with time complexity of creating the social network:
+O(n), where n is the number of friends in the social network for a given user
+
+2. Number of courses already attended by user
+O(a), where a is the number of courses attended
+
+3. Get candidate courses
+for each friend, we get their courses in O(a) time. Thus total time to get all courses of all friends =
+O(n * a)
+For each of the above courses, we check if it is already taken by performing O(a) lookups.
+Thus total time = O (n * a * a)
+
+Then we increment count, but this uses a HashMap and can be done in constant time (lookup and insert)
+
+4. Sorting the recommendations
+Comparison based sorting of n values can be done at best in O(n log n) time. This is true for insertions into TreeMap
+implementation too. Ref: https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html
+
+Thus, total running time =
+
+O(n) + O(a) + O(n * a * a) + O(b log b),
+
+where, O(n) is the upper bound on the number of friends (up to 2 levels in social graph) for a given user
+       O(a) is the upper bound on the number of courses attended by a given user
+       b = O(n * a * a), when the user in question has not attended any courses
+
+which reduces to:
+
+O(b log b), where b = O(n * a * a)
